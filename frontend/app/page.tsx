@@ -45,7 +45,6 @@ function ChartCard({
         <MoreHorizontal size={20} style={{ color: "#aaa", flexShrink: 0, marginTop: 2 }} />
       </div>
 
-      {/* 구분선 */}
       <div style={{ margin: "10px 16px 0", height: "1px", backgroundColor: "#E8E8E8", flexShrink: 0 }} />
 
       <div style={{ flex: 1, minHeight: 0, padding: "8px 4px 4px" }}>
@@ -75,7 +74,7 @@ function SectionHeader({ title, seeAllHref }: { title: string; seeAllHref: strin
 export default function HomePage() {
   return (
     <div style={{ backgroundColor: "#FFFFFF", minHeight: "100%" }}>
-      <div style={{ padding: "16px 40px 60px" }}>
+      <div style={{ padding: "16px 40px 0" }}>
 
         {/* ── Dashboard 섹션 ── */}
         <section id="dashboard" style={{ marginBottom: "30px", scrollMarginTop: "20px" }}>
@@ -119,7 +118,7 @@ export default function HomePage() {
         </section>
 
         {/* ── Admin 섹션 ── */}
-        <section id="admin" style={{ scrollMarginTop: "20px" }}>
+        <section id="admin" style={{ scrollMarginTop: "20px", paddingBottom: "50vh" }}>
           <SectionHeader title="Admin" seeAllHref="/admin" />
           <div style={{ border: "1px solid #D9D9D9", borderRadius: "12px", height: "300px", display: "flex", alignItems: "center", justifyContent: "center" }}>
             <p style={{ fontSize: "13px", color: "#BBBBBB" }}>준비 중</p>

@@ -1,0 +1,12 @@
+# API keys
+.env
+
+# Experiment outputs (large, regenerable)
+outputs/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Codex audit prompts (internal)
+CODEX_AUDIT_PROMPT*.md

@@ -1,0 +1,34 @@
+Title: Weighing Nvidia (NVDA) Valuation After Recent Share Price Softness And Mixed Signals On Growth
+Source: Simply Wall St / Yahoo Finance
+Date: Mar 18, 2026
+Ticker: NVDA
+
+Recent performance snapshot for NVIDIA (NVDA)
+
+NVIDIA has drawn fresh attention after mixed short-term share performance, with a 1-day return of about a 1% decline, a 7-day return near a 2% decline, and a modest move over the past month.
+
+Over the past 3 months the stock shows a small positive return of roughly 4%, while year-to-date performance sits around a 4% decline, creating an interesting contrast with its 1-year total return above 50%.
+
+Recent share price softness contrasts with a very strong multi-year total shareholder return. This suggests sentiment has cooled in the short term while longer-term holders have still seen substantial gains.
+
+With NVIDIA now carrying a market value above US$4,000b, strong reported revenue and net income, and a sizeable gap to analyst price targets, it is reasonable to ask whether there is still a buying opportunity here or whether the market is already pricing in future growth.
+
+Most Popular Narrative: 6.9% Overvalued
+
+Based on the most-followed narrative fair value of US$170.26 compared with the last close of US$181.93, NVIDIA screens as modestly expensive according to KiwiInvest.
+
+The narrative argues that Nvidia could hit US$400b in annual revenue in five years’ time, with around 90% of revenue coming from data center customers. This equates to roughly US$90b per quarter, or about 30,000 Blackwell racks at approximately US$3m per rack.
+
+This view depends on ambitious data center demand, rich margins, and a premium future earnings multiple.
+
+Result: Fair Value of US$170.26 (OVERVALUED)
+
+However, this story can change quickly if a cheaper AI platform undercuts CUDA, or if regulation limits data center power use and restricts demand.
+
+Another angle on NVIDIA's valuation
+
+The user narrative pegs fair value at US$170.26 per share, suggesting NVIDIA is 6.9% overvalued versus the US$181.93 last close. A P/E-based view tells a different story.
+
+At 36.8x earnings, NVIDIA trades below the U.S. semiconductor industry average of 41.7x and below peers at 87.1x.
+
+The company also sits under an estimated fair ratio of 58x, which is a level the market could move toward over time. That gap can be read in two ways: as valuation risk if expectations reset, or as headroom if earnings keep pace with current forecasts.

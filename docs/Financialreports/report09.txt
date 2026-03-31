@@ -1,0 +1,72 @@
+Title: Is It Time To Reassess Entegris (ENTG) After Recent Share Price Weakness?
+Source: Simply Wall St / Yahoo Finance
+Date: Mar 17, 2026
+Ticker: ENTG
+
+If you are wondering whether Entegris is reasonably priced or carrying a premium at today’s levels, you are not alone, and the numbers give you a lot to work with.
+
+The stock last closed at US$111.64, with a 4.9% decline over the past 7 days, a 15.1% decline over the past 30 days, but is still up 24.7% year to date and 11.2% over the last year.
+
+Recent headlines around Entegris have focused on its role as a key supplier within the semiconductor supply chain and how that relates to ongoing investment in chip manufacturing capacity. This context is important for understanding why the share price can move sharply as sentiment toward semiconductor spending shifts.
+
+On Simply Wall St’s valuation model, Entegris currently scores 1 out of 6 for being undervalued. The next sections compare what different valuation methods say about the stock and then finish with a broader way to think about what that score really means for long-term investors.
+
+Approach 1: Entegris Discounted Cash Flow (DCF) Analysis
+
+A Discounted Cash Flow, or DCF, model estimates what a company could be worth today by projecting its future cash flows and then discounting those back to a present value.
+
+For Entegris, the model used is a 2 Stage Free Cash Flow to Equity approach based on cash flow projections in U.S. dollars. The latest twelve-month free cash flow is about US$351.5 million. Analyst inputs and subsequent extrapolations point to projected free cash flow of US$850.3 million in 2030, with intermediate years such as 2026 and 2027 modeled at US$437.3 million and US$550.7 million respectively. Beyond the explicit analyst horizon, additional projections are extended using growth assumptions.
+
+When all these projected cash flows are discounted back, the DCF model arrives at an estimated intrinsic value of about US$64.77 per share. Compared with the recent share price of US$111.64, this implies the stock is around 72.4% above the DCF estimate, suggesting a rich valuation on this measure.
+
+Result: OVERVALUED
+
+Approach 2: Entegris Price vs Earnings
+
+For a profitable company like Entegris, the P/E ratio is a useful way to connect what you pay for the stock with the earnings it currently generates. It helps show how many dollars investors are willing to pay today for each dollar of earnings.
+
+What counts as a normal P/E depends a lot on how quickly earnings are expected to grow and how risky those earnings appear. Higher expected growth or lower perceived risk can justify a higher P/E, while slower growth or higher risk usually point to a lower, more cautious multiple.
+
+Entegris currently trades on a P/E of 71.98x. This sits above the semiconductor industry average P/E of 41.72x and the peer average of 41.95x, so the stock carries a higher earnings multiple than many of its closest comparisons.
+
+A Fair Ratio for Entegris is estimated at 41.87x. This reflects factors such as the company’s earnings profile, industry, profit margins, market capitalization, and risk characteristics. Because it combines these elements, it can be more tailored than a simple peer or industry comparison.
+
+With the current P/E of 71.98x versus a Fair Ratio of 41.87x, the stock screens as expensive on this metric.
+
+Result: OVERVALUED
+
+Choose Your Entegris Narrative
+
+A broader way to understand valuation is to link a view of Entegris’s business with assumptions for future revenue, earnings, margins, and the fair value that follows from those estimates.
+
+These narratives can be compared directly with the current share price to judge whether the stock appears above or below a reasonable estimate of value. Different assumptions can lead to very different fair values.
+
+For Entegris today, one investor might build a more optimistic narrative around a fair value near US$156 using higher revenue growth, margin expansion, and a stronger future P/E multiple. Another might anchor on a more cautious narrative with a fair value near US$75.
+
+Entegris Bull Case
+
+Fair value used in this bullish narrative: US$142.73 per share
+
+At the last close of US$111.64, this narrative views the stock as about 21.8% below its fair value estimate.
+
+Revenue growth assumption: 7.0% per year
+
+This view focuses on Entegris benefiting from regionalized manufacturing, especially in Asia, to support more resilient revenue and shorter lead times.
+
+It builds on higher revenue growth, margin expansion, and a relatively strong future P/E multiple to support a higher fair value estimate.
+
+It flags trade policy, leverage, and customer concentration as real risks, but assumes Entegris can still grow earnings enough to justify higher valuation targets.
+
+Entegris Bear Case
+
+Fair value used in this bearish narrative: US$75.00 per share
+
+At the last close of US$111.64, this narrative views the stock as about 48.9% above its fair value estimate.
+
+Revenue growth assumption: 6.1% per year
+
+This view emphasizes geopolitical tension, tariffs, and tighter regulation as headwinds for Entegris, particularly where China exposure and compliance costs are concerned.
+
+It assumes rising competition, possible product commoditization, and supply chain costs could keep margins under pressure and warrant a lower future P/E multiple.
+
+It accepts that there are long-term semiconductor demand drivers, but treats current pricing as leaving limited room if earnings or growth fall short of more cautious expectations.

@@ -1,0 +1,42 @@
+Title: Is It Time To Reassess Tempus AI (TEM) After Recent Share Price Weakness?
+Source: Simply Wall St / Yahoo Finance
+Date: Mar 18, 2026
+Ticker: TEM
+
+Wondering if Tempus AI is attractively priced or just riding hype? This article walks you through what the numbers actually say about its current valuation.
+
+The stock closed at US$50.84, with a 0.1% decline over 7 days, a 2.1% decline over 30 days, and an 18.5% decline year to date, though it is up 11.2% over the past year.
+
+Recent coverage of Tempus AI has focused on its role in applying artificial intelligence to healthcare data. This has kept investor attention on how the business model might scale and how quickly. That context is important when you think about whether the share price swings reflect changing expectations about growth or simply shifts in risk appetite.
+
+Right now, Tempus AI has a valuation score of 3 out of 6, meaning it screens as undervalued on half of the checks used here. The next sections break down what different valuation methods say about that pricing and point to a broader way to think about value at the end of the article.
+
+Approach 1: Tempus AI Discounted Cash Flow (DCF) Analysis
+
+A Discounted Cash Flow model projects a company’s future cash flows and then discounts those projections back to today’s dollars, aiming to estimate what the business could be worth right now based on those cash flows.
+
+For Tempus AI, the model used is a 2 Stage Free Cash Flow to Equity approach. The latest twelve-month free cash flow is a loss of about US$257.7 million. Analyst inputs and extrapolated estimates point to projected free cash flow of US$671.5 million by 2030, with interim projections running from roughly US$39.6 million in 2026 up to that 2030 figure. Beyond the explicit analyst horizon, additional cash flows are extrapolated to complete the model.
+
+When all of those future cash flows are discounted back to today using this method, the estimated intrinsic value comes out at US$138.85 per share. Compared with the recent share price of US$50.84, the DCF output indicates the stock is 63.4% undervalued on this set of assumptions.
+
+Result: UNDERVALUED
+
+Approach 2: Tempus AI Price vs Sales
+
+For companies where profits are not yet the main driver, the P/S ratio is often more useful than P/E because it focuses on what the market is paying for each dollar of revenue, rather than earnings that may still be negative or volatile.
+
+In general, higher expected growth and lower perceived risk tend to justify a higher P/S multiple, while slower expected growth or higher risk usually point to a lower, more conservative range. That is why simply looking at a single number in isolation can be misleading.
+
+Tempus AI currently trades on a P/S ratio of 7.15x. This is above the Life Sciences industry average of 2.98x and above the peer group average of 4.18x. A Fair Ratio of 7.42x is also calculated for Tempus AI, reflecting factors such as its growth outlook, margins, industry, market value, and specific risks.
+
+Because the Fair Ratio is tailored to the company, it provides a more targeted reference point than broad industry or peer comparisons, which may mix together businesses with very different growth profiles and risk levels.
+
+The current P/S of 7.15x is below the Fair Ratio of 7.42x, which indicates that Tempus AI appears undervalued on this metric.
+
+Result: UNDERVALUED
+
+Choose Your Tempus AI Narrative
+
+A broader way to understand valuation is to connect your view of Tempus AI’s story to specific forecasts for its future revenue, earnings, and margins. These flow into a fair value that can be compared with today’s price to help judge whether the current US$50.84 share price looks attractive.
+
+A more cautious narrative might see fair value around US$58, while a more optimistic one may place it closer to US$105. These views update as new earnings, guidance, or news arrive, allowing the valuation view to move with fresh information.

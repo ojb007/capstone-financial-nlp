@@ -1,0 +1,38 @@
+Title: Is Lowe's (LOW) Fairly Priced After Recent Share Price Weakness?
+Source: Simply Wall St / Yahoo Finance
+Date: Mar 17, 2026
+Ticker: LOW
+
+Wondering if Lowe's Companies is fairly priced after its recent moves, or if the current share price is giving you a margin of safety?
+
+The stock last closed at US$242.11 and has seen a 3.2% decline over the past week and a 15.8% decline over the past month, while still showing a 9.4% return over the last year and a 46.1% return over five years.
+
+These price swings sit against a backdrop of ongoing interest in home improvement spending and retailer positioning, which keeps Lowe's in focus for investors tracking consumer trends. Broader sector sentiment and expectations around household spending are often reflected quickly in Lowe's share price, which helps explain some of the recent volatility.
+
+Lowe's currently has a valuation score of 3 out of 6. The rest of this article compares different valuation approaches to that score and finishes with a way to think about valuation that goes beyond any single model.
+
+Approach 1: Lowe's Companies Discounted Cash Flow (DCF) Analysis
+
+A Discounted Cash Flow, or DCF, model estimates what a business could be worth by projecting its future cash flows and then discounting those back to today using a required rate of return. It is a cash flow-based way to think about value, rather than just looking at earnings multiples.
+
+For Lowe's Companies, the model used here is a 2 Stage Free Cash Flow to Equity approach, based on cash flows available to shareholders. The latest twelve-month free cash flow is about US$7.81b. Analyst-based and extrapolated projections suggest free cash flow in 2031 of around US$9.11b, with a path of annual figures between those points, some from analyst estimates and some extended beyond the usual 5-year horizon.
+
+Bringing all those projected cash flows back to today, the DCF model arrives at an estimated intrinsic value of about US$248.99 per share. Compared with the recent share price of US$242.11, this implies the stock is around 2.8% undervalued, which is a relatively small gap.
+
+Result: ABOUT RIGHT
+
+Approach 2: Lowe's Companies Price vs Earnings
+
+For a profitable company, the P/E ratio is a useful way to see how much you are paying for each dollar of earnings. This makes it a common yardstick for retailers like Lowe's Companies. A higher P/E usually reflects higher growth expectations or lower perceived risk, while a lower P/E can indicate more modest growth expectations or higher perceived risk.
+
+Lowe's currently trades on a P/E of 20.47x. That sits above the Specialty Retail industry average of 18.49x, but below the peer group average of 28.83x. On a simple comparison, Lowe's is therefore priced higher than the broader industry but lower than many close peers.
+
+Simply Wall St also calculates a Fair Ratio of 21.75x for Lowe's. This is an estimate of what the P/E might be given the company’s earnings growth profile, profit margins, size, risk factors, and industry. This Fair Ratio can be more informative than a straight peer or industry comparison because it adjusts for differences in quality, growth, and risk. With the current P/E of 20.47x sitting slightly below the Fair Ratio of 21.75x, the shares screen as modestly undervalued on this metric.
+
+Result: UNDERVALUED
+
+Choose Your Lowe's Companies Narrative
+
+A broader way to understand valuation is to attach a clear story about Lowe's Companies to the numbers that matter by linking assumptions about future revenue, earnings, margins, and fair value to a forecast, and then comparing that fair value with the current share price.
+
+Different investors may reach very different conclusions. One investor might lean toward the higher analyst fair value of about US$286.48 per share, while another may anchor closer to the lower analyst price target of US$221. These differences can lead to very different views on whether the present price looks attractive or stretched.

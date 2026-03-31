@@ -1,0 +1,71 @@
+
+Title: Is It Time To Reassess Apple (AAPL) After Recent Share Price Weakness?
+Source: Simply Wall St / Yahoo Finance
+Date: Mar 17, 2026
+Ticker: AAPL
+
+Wondering whether Apple at a recent price of US$252.82 is giving you a fair deal or asking too much for its future? This article walks through what the current market price might be implying.
+
+Over the past week Apple saw a 2.7% decline, while the 30-day return is a 1.2% decline. The year-to-date return is a 6.7% decline, but the 1-year, 3-year and 5-year returns stand at 18.7%, 62.9% and 110.4% respectively, which can change how you think about timing and risk.
+
+Recent headlines have focused on Apple’s ongoing product ecosystem, services expansion and long-term positioning in consumer technology. All of these influence how investors react to new information. These news themes help frame why the stock can move even when there is no single dominant catalyst.
+
+Despite its size and long track record, Apple currently has a valuation score of 1 out of 6. The next sections compare what different valuation approaches say about that number and then finish with a broader way to think about what value really means for this stock.
+
+Approach 1: Apple Discounted Cash Flow (DCF) Analysis
+
+A Discounted Cash Flow, or DCF, model estimates what a company might be worth by projecting its future cash flows and discounting them back to today using a required rate of return. It focuses on cash the business could potentially return to shareholders over time.
+
+For Apple, the model used here is a 2 Stage Free Cash Flow to Equity approach. The latest twelve month free cash flow stands at about US$124.1b. Analysts provide free cash flow estimates up to 2030, and Simply Wall St then extrapolates beyond that. By 2035, the projection reaches about US$229.3b in free cash flow, with each year between 2026 and 2035 modeled in billions of U.S. dollars.
+
+After discounting these projected cash flows back to today, the model arrives at an estimated intrinsic value of US$228.87 per share. Compared with the recent share price of US$252.82, this implies the stock is about 10.5% overvalued on this DCF view.
+
+Result: OVERVALUED
+
+Approach 2: Apple Price vs Earnings
+
+For profitable companies, the P/E ratio is a useful way to think about value because it links what you pay today to the earnings the business is already generating. It gives you a quick sense of how many dollars investors are currently willing to pay for each dollar of earnings.
+
+What counts as a normal P/E depends on expectations for future growth and the risk investors see in those earnings. Higher expected growth or lower perceived risk can justify a higher P/E, while slower expected growth or higher risk usually points to a lower multiple.
+
+Apple currently trades on a P/E of about 31.5x. That is above the broader Tech industry average of about 22.1x and also above the peer group average of about 28.9x. Simply Wall St’s Fair Ratio for Apple is 38.8x, which is its estimate of a suitable P/E once earnings growth, profit margins, industry, market cap and company specific risks are factored in.
+
+The Fair Ratio can be more informative than a simple peer or industry comparison because it adjusts for Apple’s specific profile rather than assuming one size fits all. With the current P/E of 31.5x sitting below the Fair Ratio of 38.8x, this approach points to the shares being undervalued on earnings.
+
+Result: UNDERVALUED
+
+Choose Your Apple Narrative
+
+A broader way to understand valuation is to connect your assumptions about Apple’s future revenue, earnings and margins to a forecast and a fair value estimate that can be compared with today’s US$252.82 share price.
+
+Different investors can use the same framework but reach very different conclusions, from a cautious view that sets fair value near US$100 to a bullish outlook closer to US$350. Your own view may depend on how you expect AI spending, services growth and margins to develop.
+
+Apple Bull Case
+
+Fair value: US$275.00
+
+Implied undervaluation vs US$252.82: about 8.0%
+
+Revenue growth used in this view: 12.78%
+
+This view sees recent tariff pressures and higher iPhone production costs as serious issues, but expects Apple to soften the blow by shifting assembly toward India and Vietnam.
+
+Services, with Q1 2025 revenue of US$26.3b and overall profit of US$36.33b, are highlighted as a key support for earnings alongside hardware.
+
+The fair value of US$275 is linked to confidence in Apple’s AI efforts, brand strength and a longer-term recovery from geopolitical and supply chain shocks.
+
+Apple Bear Case
+
+Fair value: US$207.71
+
+Implied overvaluation vs US$252.82: about 21.7%
+
+Revenue growth used in this view: 6.39%
+
+This view is more cautious, arguing that Apple leans heavily on markets like India where incomes are much lower, which could cap iPhone and iPad adoption and pressure margins.
+
+Regulation and contracts are a central concern, with EU rules on hardware and any change to the US$15b per year Google search deal seen as meaningful risks to Services and accessories revenue.
+
+New products such as Vision Pro and mixed reality are treated as high-cost bets that may add only limited revenue, while still requiring substantial R&D and risking weaker returns if demand stays lukewarm.
+
+Seeing these two narratives side by side highlights how different assumptions on tariffs, AI, new products and regulation can justify very different fair values for the same US$252.82 share price. This comparison can help you decide where your own view on Apple sits between them.

@@ -1,0 +1,68 @@
+Title: Is Meta Platforms (META) Still Reasonably Priced After Its Strong Multi Year Share Price Run?
+Source: Simply Wall St
+Date: Mar 3, 2026
+Ticker: META
+
+If you are wondering whether Meta Platforms is still reasonably priced after such a strong multi-year run, this article walks through how its current share price lines up against several valuation checks.
+
+The stock last closed at US$653.56, with returns of 2.6% over 7 days, an 8.8% decline over 30 days, 0.5% year to date, 0.1% over 1 year, and a very large gain of 255.9% over 3 years and 157.8% over 5 years.
+
+Recent headlines have continued to focus on Meta Platforms' push in areas like artificial intelligence tools across its apps and long-term spending on its metaverse ambitions. Both of these shape how investors think about future cash flows and risk. At the same time, ongoing discussion around regulation and content moderation keeps attention on potential costs and business constraints, which can also feed into how the market prices the stock.
+
+On a simple six-point valuation checklist, Meta Platforms scores 5 out of 6. The next sections look at what different valuation approaches are signaling today, before finishing with a broader framework that can help make sense of those numbers in a more complete way.
+
+Approach 1: Meta Platforms Discounted Cash Flow (DCF) Analysis
+
+A Discounted Cash Flow, or DCF, model estimates what a company might be worth today by projecting its future cash flows and then discounting those cash flows back to a present value.
+
+For Meta Platforms, the model uses a 2 Stage Free Cash Flow to Equity approach based on cash flow projections in U.S. dollars. The latest twelve-month free cash flow is reported at about US$61.98b. Analysts provide detailed estimates out to 2030, with projected free cash flow of US$119.49b in that year, and Simply Wall St extends those projections further using its own growth assumptions to complete the 10-year path.
+
+After discounting each of those expected cash flows back to today, the model arrives at an estimated intrinsic value of about US$1,137.75 per share. Compared with the recent share price of US$653.56, this implies a 42.6% discount, which indicates the shares are trading below this DCF estimate.
+
+Result: UNDERVALUED
+
+Approach 2: Meta Platforms Price vs Earnings
+
+For profitable companies, the P/E ratio is often the cleanest way to link what you pay today with the earnings the business is currently generating. It gives you a quick sense of how many years of current earnings the share price reflects.
+
+What counts as a normal or fair P/E depends a lot on how the market views the company’s growth prospects and risk. Higher expected earnings growth or lower perceived risk can support a higher P/E, while slower growth or higher uncertainty tends to justify a lower one.
+
+Meta Platforms is trading on a P/E of 27.34x. That sits above the Interactive Media and Services industry average of 14.93x, but below the peer group average of 30.79x. Simply Wall St also calculates a proprietary Fair Ratio for Meta of 43.17x. This Fair Ratio is designed to be more tailored than a simple peer or industry comparison because it blends in factors such as the company’s earnings growth profile, profit margins, industry, market cap, and risk characteristics.
+
+Comparing Meta’s current P/E of 27.34x with the Fair Ratio of 43.17x suggests the shares are trading below this Fair Ratio-based view.
+
+Result: UNDERVALUED
+
+Choose Your Meta Platforms Narrative
+
+A broader way to understand valuation is to connect a clear story about Meta Platforms to specific forecasts for revenue, earnings, margins, and fair value. You can then compare that fair value directly to the current price to help decide whether to buy, hold, or sell. Each narrative updates automatically when new information such as earnings or regulatory news arrives.
+
+In practice, that means one Meta narrative might focus on higher regulatory risk in Europe and arrive at a fair value closer to US$496.65. Another might emphasize AI data center spending and assign a fair value of about US$1,002.67. A third might take a more cautious middle ground around US$527.02. Each of these uses the same company data but different assumptions, so you can quickly see which story and fair value range best matches how you see Meta today.
+
+Meta Platforms Bull Case
+
+Fair value: US$835.54 per share
+
+Implied discount vs last close: about 21.8% below this narrative fair value
+
+Revenue growth assumption: 16.73% a year
+
+This view focuses on AI-driven ad tools, data center buildout, and messaging monetization as key supports for long-term revenue and cash generation, while acknowledging heavier AI and metaverse spending and ongoing regulatory risk.
+
+It builds its view around analysts expecting revenue to reach US$275.9b and earnings of US$92.1b by about 2028, with profit margins easing from 40.0% to 33.4% and the P/E rising to 29.2x on those earnings.
+
+It highlights analyst targets clustered between roughly US$750 and US$900, a blended fair value of US$835.54, and a slightly higher 8.33% discount rate, while encouraging stress testing of those inputs against personal expectations.
+
+Meta Platforms Bear Case
+
+Fair value: US$538.09 per share
+
+Implied premium vs last close: about 21.5% above this narrative fair value
+
+Revenue growth assumption: 10.5% a year
+
+This view leans on Meta’s strengths in social media, AI models, and AR/VR hardware, but pairs that with caution around heavy Reality Labs losses, execution risk in the metaverse, and the need for users and developers to actually adopt these products.
+
+It assumes AR/VR hardware revenue could reach around US$15b by 2028 with Meta keeping a meaningful share of headset shipments, and expects profit margins to move toward 25% as cost cutting and a leaner organization take effect.
+
+It flags key risks around regulation, heavy reliance on advertising, potential cybersecurity issues, and sensitivity to global economic conditions that could affect ad budgets and the payoff from large capital expenditure plans.

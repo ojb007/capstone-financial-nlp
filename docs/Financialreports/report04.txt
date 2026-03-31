@@ -1,0 +1,80 @@
+Title: Is Microsoft (MSFT) Still Attractively Priced After Recent AI Optimism And Share Price Gains
+Source: Simply Wall St / Yahoo Finance
+Date: Mar 17, 2026
+Ticker: MSFT
+
+If you are wondering whether Microsoft at around US$399.95 is priced for opportunity or already reflects the good news, you are asking the right question.
+
+The stock is down 2.3% over the last 7 days and 0.3% over the last 30 days, while still showing a 3.7% return over 1 year and longer-term gains of 50.4% over 3 years and 76.6% over 5 years.
+
+Recent headlines around Microsoft have continued to focus on its role at the center of large technology themes and how that shapes expectations for its major business lines. This context helps explain why the share price can move even on days without new company-specific announcements.
+
+On Simply Wall St's 6-point valuation check, Microsoft scores 5 out of 6. The next sections walk through what different valuation approaches say about the stock and point to a more complete way to think about value.
+
+Approach 1: Microsoft Discounted Cash Flow (DCF) Analysis
+
+A Discounted Cash Flow model estimates what a company could be worth by projecting its future cash flows and then discounting those back to today using a required return. It focuses on cash that could in theory be returned to shareholders, not just accounting profit.
+
+For Microsoft, the model uses a 2 Stage Free Cash Flow to Equity approach based on cash flow projections. The latest twelve-month Free Cash Flow stands at about US$93.7b. Analyst estimates and subsequent extrapolations project Free Cash Flow reaching about US$164.8b in 2030, with intermediate yearly figures between 2026 and 2035 ranging from roughly US$70.8b to US$264.5b before discounting.
+
+When these projected cash flows are discounted and combined with an estimate for cash flows beyond the forecast period, the result is an intrinsic value of about US$446.89 per share. Compared with a recent share price around US$399.95, this implies the stock is about 10.5% undervalued based on this DCF model alone.
+
+Result: UNDERVALUED
+
+Approach 2: Microsoft Price vs Earnings
+
+For a profitable company like Microsoft, the P/E ratio is a useful way to think about what you are paying for each dollar of earnings. A higher or lower P/E often reflects what the market expects for future growth and how much risk investors see in the business.
+
+In general, stronger and more predictable earnings growth can justify a higher P/E, while higher perceived risk or slower growth tends to support a lower, more conservative multiple. That is why it helps to compare a company not only with its sector but also with expectations that are specific to its own profile.
+
+Microsoft currently trades on a P/E of about 24.9x. This sits below both the Software industry average of about 27.8x and the peer average of about 28.4x. Simply Wall St’s Fair Ratio for Microsoft is 45.0x, which is an estimate of the P/E that might be expected given factors such as earnings growth, profit margins, industry, market cap, and risk profile.
+
+The Fair Ratio is more tailored than a simple industry or peer comparison because it attempts to adjust for those company-specific characteristics rather than assuming one size fits all. With the Fair Ratio above the current 24.9x P/E, the multiple suggests Microsoft is trading below that model-based estimate.
+
+Result: UNDERVALUED
+
+Choose Your Microsoft Narrative
+
+A broader way to understand valuation is to connect a clear story about Microsoft to the numbers that matter, such as fair value, future revenue, earnings, and margins.
+
+A Narrative is essentially a written perspective on the company that sits alongside a forecast. Instead of only seeing a DCF output or a P/E multiple, you spell out why you think those inputs make sense and what has to be true for them to hold.
+
+Narratives link three pieces together: the company story you believe, the financial forecast you assign to it, and the fair value that comes out of those assumptions, so you can compare that to the current price and decide how attractive the gap looks.
+
+Because Narratives are updated when fresh information such as earnings or major news is loaded into the underlying company data, they allow the valuation story to move with new developments.
+
+Microsoft already has very different Narratives. One example frames it as an AI orchestrator with a fair value around US$447, while another focuses on long-term economic durability with a real-terms base value around US$330 to US$360. This shows how investors with different views can translate their stories into very different fair values using the same current share price.
+
+Two leading Microsoft Narratives are shown below. Together they illustrate what different investors think the current US$399.95 share price is really worth.
+
+Microsoft Bull Case
+
+Fair value: US$420.00 per share
+
+Gap to fair value: about 4.8% above the recent price
+
+Revenue growth assumption: 78.32%
+
+This narrative, titled "The Leaking Dreadnought," argues that enthusiasm around AI, the OpenAI partnership, and the datacenter buildout sits on top of weakening foundations in PCs, Xbox, and internal culture.
+
+It highlights very heavy AI-related capital spending and questions whether those costs can be matched by revenue, especially if AI models become more commoditized and pressure pricing.
+
+The author also flags employee morale, product quality concerns around Windows, and potential cannibalization from AI as factors that could weigh on Microsoft over time.
+
+Microsoft Bear Case
+
+Fair value: US$333.48 per share
+
+Gap to fair value: about 19.9% above the narrative estimate
+
+Revenue growth assumption: 9.5%
+
+This narrative focuses on Microsoft as a broad growth story built around AI across Microsoft 365, Azure, gaming, LinkedIn, and healthcare, but with a view that the market enthusiasm may be running ahead of when the cash flows actually arrive.
+
+It sets out assumptions for higher cloud revenues, higher profit margins, and ongoing buybacks, while still treating current pricing as rich relative to those forecasts.
+
+Key risks include competition in cloud and productivity apps, regulatory pressure, and the challenge of finding enough high-return projects at Microsoft’s current size.
+
+Reading both viewpoints side by side can help you decide which set of assumptions feels closer to your own and whether Microsoft’s current price fits the story you believe in.
+
+Once you have a view, you can keep tracking how those stories evolve through new Narratives and future earnings updates for Microsoft, rather than relying on a single model or headline valuation.

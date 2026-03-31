@@ -1,0 +1,23 @@
+The online mortgage platform Better has partnered with OpenAI to launch an app within ChatGPT that the companies said will dramatically reduce the time it takes to underwrite a mortgage or home equity loan, CNBC has learned exclusively.
+
+The app, announced by the firm later Thursday, takes Better’s mortgage engine and combines it with OpenAI’s models to speed up the underwriting process for loan officers working at banks, mortgage brokers and fintech firms, Better CEO Vishal Garg said in an interview.
+
+“Taking the mortgage underwriting process, which so many of us have experienced personally, from 21 days to as little as 47 seconds and enabling it via ChatGPT is a huge unlock for everyone,” Giancarlo Lionetti, OpenAI’s chief commercial officer, said in a statement provided to CNBC.
+
+“OpenAI is proud to partner with Better to build technology that revolutionizes the mortgage industry and makes it cheaper, faster, and easier for American families to finance a home,” he added.
+
+For decades, creating a mortgage has been one of the most time-consuming corners of American finance, with lenders relying on dozens of steps that can take weeks to complete. After the 2008 financial crisis, big banks like JPMorgan Chase receded from the U.S. mortgage market, leading to the rise of non-bank players including Rocket Mortgage and United Wholesale Mortgage.
+
+Better stock jumped as much as 5% on the news, while Rocket Mortgage shares fell as much as 6% and UWM shares dropped nearly 4%.
+
+Now, in an era where the leading artificial intelligence firms are targeting inefficiencies across the corporate landscape, it’s possible that AI agents could reshape a U.S. home-loan market that originates more than $1 trillion in mortgages a year.
+
+Garg said the new app is part of Better’s pivot from being primarily a lender to consumers to also becoming a “mortgage-as-a-service” tech platform for other mortgage players.
+
+The companies are taking direct aim at the dominant mortgage players by enabling competitors to move faster, Garg said. According to Better, lenders can save 21 days of time on average, reducing the costs to underwrite loans and ultimately saving consumers money as well.
+
+“AI is now doing mortgages,” Garg said. “Rocket, UWM, Pennymac, a bunch of guys that are large public companies, make their money by effectively charging a tax of one and half percent to underwrite mortgages. … That’s $20 billion that’s paid by the American public in a typical year.”
+
+OpenAI’s models, fed with Better’s mortgage data, save time by simultaneously running parallel workflows on dozens of checkpoints, including appraisals, title reports, income, credit reports and other metrics, Garg said.
+
+“It’s not a simple tool call. It’s a multiple tool call with a super long, extended logic tree and a very large context window,” Garg said.

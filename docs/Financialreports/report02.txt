@@ -1,0 +1,50 @@
+Title: Apple: Embracing AI The Way It Knows Best, Through Design (Rating Upgrade)
+Source: Seeking Alpha
+Date: Mar 18, 2026
+Ticker: AAPL
+
+By Oliver Rodzianko
+
+Apple (AAPL), which is down 8% since my last analysis of the company, is embracing AI the way it knows best, through design. This might not make Apple the most exciting growth stock to own right now, but it does make it stable, consumer-friendly, cash-rich, and buyback-heavy. These are all the reasons that long-term Apple investors love the stock and the primary reasons I believe that they will continue to view Apple as a safe haven in the AI age.
+
+Apple's strategy is admittedly quite clever: outsource the major cash-depletive moat building to hyperscalers and focus on building Apple Intelligence AI into iOS, iPadOS, and macOS.
+
+Essentially, Apple wants AI to disappear into the interface rather than live as a separate chatbot destination, and in that sense, Apple products will likely become the primary consumer interface for AI. That also means Apple will probably never lead on raw AI model scale, but so what? It will instead lead in hardware, software, and intelligence design integration.
+
+Apple's "Normal People" Model
+
+Apple has the widest premium-device channel in consumer AI: in Q1 FY26 its revenue was $143.8B, with iPhone and Services both hitting records and its installed base topping 2.5B active devices.
+
+The company also has a 3B-parameter on-device model plus a larger server-based model for Private Cloud Compute. This is essentially a strategy to keep privacy, latency, and reliability local but to offload heavier reasoning when needed.
+
+Admittedly, the app experience with Apple Intelligence doesn't come across as revolutionary like ChatGPT did when it was first released. It instead feels like an upgrade, as one would expect from an incremental value builder like Apple. Apple was already showcasing its SmartGym, Signeasy, Agenda, OmniFocus, and Essayist on-device model capabilities by September 2025. March launches like the iPhone 17e, MacBook Neo, and MacBook Air with M5 are extending the AI-oriented silicon deeper into the product lineup. Management has opted for a broad-based targeting strategy by not limiting Apple Intelligence to Pro-tier devices.
+
+We have to give credence, then, to the fact that Apple isn't simply outsourcing AI. Far from it. In Houston, Apple is expanding advanced AI server manufacturing while expecting to buy well over 100M advanced chips from TSMC Arizona in 2026.
+
+What Apple wants, but is still somewhat distant, is for Siri to be a true cutting-edge assistant layer. Of course, this has become many times harder in an age where AI agents are proliferating.
+
+In support of these ambitions, costs are understandably rising before AI economics fully shows up. Q1 FY26 R&D rose 32% to $10.9B, driven in part by infrastructure, headcount, and engineering costs. Manufacturing purchase obligations stood at $44.4B. Like most players at the moment, Apple is funding AI as platform infrastructure first, and it will be monetizing it later and indirectly. The question is, how strong is your vision and how enduring is your conviction? With the add-on, are you right? If Apple has learned something from Steve Jobs, it will succeed at fulfilling these operational qualities.
+
+Valuation
+
+Apple stock isn't on sale at the moment, but it's fairly valued in my opinion, and that makes an appropriate entry point for stability-oriented growth investors looking for an index-like return on capital. Apple is slow and steady these days, and that can be understood when we acknowledge its scale: a market cap of $3.67T and a relatively non-cyclical business model compared to semiconductors or energy hardware make the rational bull case all the more clear. Personally, I don't own it because I like a bit more horsepower in my portfolio.
+
+That said, I'm judging the fair valuation on the chart, which shows a median weekly RSI and a stock price close to the 50-week moving average. That's a good read on the stock trading along average sentiment barometers, because as Apple is a powerhouse Mag 7 business, we're unlikely to get sector relative value at any point in the macroeconomic cycle.
+
+Apple has a forward PEG non-GAAP ratio that is 131% higher than the sector median. Is that overvalued? Sure, on paper. But so are Tesla, Palantir, and other non-cyclical Mag 7s. I'm not worried about that sector relativity argument that comes from the bears. Investors are paying for the moat, and the moat is not going anywhere any time soon, in my opinion.
+
+Moreover, Apple's organic growth is made up for with its buybacks, where it has repurchased around $100B in stock every year for several historical financial years on record. Thankfully, because Apple is not building data centers at the insatiable rate of other Mag 7s, it retains the free cash flow to do this. In fact, not only are buybacks remaining a viable option for Apple and not for other Mag 7s, but so is financial tactical agility when it comes to future operations. The next big innovation could be Apple's, while others are caught up still racing AI models.
+
+If Apple achieves a March 2028 normalized EPS of $10, with a forward P/E of 30 in March 2027, the stock price will be $300 in about 12 months. This is my bull-case estimate and reflects a 20% return without a macro cyclical compression phase occurring. The good thing about Apple is that if a macro drawdown does occur, the undervaluation can reliably be used to average down the cost of your AAPL holdings. After all, this is not BTC we are talking about. Apple is a resilient global behemoth with a plethora of real revenue streams, making sentiment sticky, not volatile, irrational, or unpredictable, in essence, beyond herd hysteria analysis.
+
+Relevant Risks
+
+It's important to acknowledge that there are limitations to Apple's financial accretion through Apple Intelligence. In reality, Apple's AI-capable reach is smaller than the 2.5B-device headline. Apple Intelligence requires more recent hardware, and it doesn't currently work for devices purchased in China. Given that Greater China produced $25.5B in Q1 sales, the AI-led upgrade case is narrower by hardware and geography than the headline installed-base figure suggests. On a tangential note, Apple's China App Store commission is cut to 25% from 30%, effective March 15.
+
+Moreover, we may see Apple's low-capex narrative become less true as time goes on. Consider that while buybacks are currently still high at $97.78B as of the last trailing 12 months, they were $100.39B for FY24. This shows moderate pressure already, even while free cash flow has proved resilient recently with $106.31B as of the last trailing 12 months compared to $78.86B in FY25 and $110.85B in FY24. Net capex has risen from $9.45B in FY24 to $12.15B as of the last trailing 12 months. What we can admit is that the operating business is still so strong that management has leeway in how it allocates its net income and operating cash flow; operating cash flow was up from $118.25B in FY24 to $135.47B as of the last trailing 12 months.
+
+Conclusion: Buy
+
+Perhaps I'm somewhat biased when it comes to Apple. The business on paper shouldn't be trading at its current forward PEG ratio, but the market cares little because, like its customers, it realizes Apple is simply irreplaceable. Whether it's the ecosystem, the hardware, or the user experience, one thing is for certain: Apple's moat is in its design. Apple, unlike some other tech companies, even successful ones, is a master of tech as an art form.
+
+In the bull case, I can see Apple delivering a 20% return in 12 months. Albeit, it may look more like 10% given the reality of sentiment amid the constraints of organic growth. However, even in the bear-case macro down-cycle occurrence, Apple is the kind of company you can confidently average down into, making cutting losses a tail risk.

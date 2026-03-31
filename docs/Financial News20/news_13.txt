@@ -1,0 +1,33 @@
+BEIJING — So many people in China are rushing to try the OpenClaw artificial intelligence tool that they’re driving up prices for secondhand Mac computers.
+
+That’s according to Jeremy Ji, chief strategy officer and general manager of international business at ATRenew, a used consumer electronics buyer and reseller that works with Apple and retailer JD.com in mainland China.
+
+OpenClaw is an AI agent, a tool that can autonomously conduct personal tasks such as sending emails and shopping online. Usage in China is currently outstripping the U.S., according to American cybersecurity firm SecurityScorecard.
+
+However, the free-to-download software also poses security risks, prompting many users to run OpenClaw on a cloud computing server or laptop separate from their primary device. If allowed direct access to a personal computer, the AI agent could autonomously alter private data such as banking information, or enable hackers to access it more easily.
+
+As people in China jump on the OpenClaw trend, they are turning to preowned computers, Ji said in a phone interview.
+
+He likened the demand surge to the pandemic, when many people bought more personal computing devices since they were working and spending more time at home.
+
+As a result, from March to May this year, Ji said that ATRenew is keeping its prices for Apple products similar to those seen during the peak fall season around new iPhone releases. That contrasts with a typical price drop during the spring.
+
+Ji said prices for a new MacBook are typically 15% higher than the used ones sold through ATRenew.
+
+Apple’s self-developed chips, the latest of which is called the M5, are generally more power-efficient than chips for computers running Windows systems. For early OpenClaw adopters, the popular hardware of choice has been Apple’s Mac Mini.
+
+ATRenew’s Ji said the company is seeing people trade in their MacBooks with older M1 and M2 chips for computers with the M4 or M5 chip. “We do see the growing demand for laptops, PCs as a whole, but the Mac devices benefit from that trend [to try OpenClaw] above all.”
+
+Consumer interest in more powerful secondhand MacBooks is “still going very strong,” Ji said, noting that ATRenew has had to increase its price for buying back devices in order to increase the supply of secondhand Macs available for purchase. He predicted the trend could continue “throughout the whole year.”
+
+An Austrian developer, Peter Steinberger, launched OpenClaw in November. But the latest wave of interest in China only picked up early this month as Tencent and other Chinese tech companies used OpenClaw as a way to attract more users.
+
+ATRenew’s Ji declined to share the exact volume of MacBooks handled since late February, but noted the average number of devices the company processed last year was around 100,000 a day. He expects the share of MacBook and other laptop or personal computing devices could grow to 20% of the business, up from 15% right now.
+
+Jensen Huang, CEO of U.S. chip giant Nvidia, told CNBC’s Jim Cramer on Tuesday that OpenClaw is “definitely the next ChatGPT.”
+
+“It is now the largest, most popular, the most successful open-sourced project in the history of humanity,” Huang said.
+
+Overall demand for AI computing power has also driven up prices for memory chips, a key component of smartphones and laptops.
+
+The chip price surge has specifically encouraged more consumers in China to buy used Apple smartphones, rather than flagship Android-based devices, Ji said.

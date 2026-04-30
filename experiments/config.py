@@ -14,7 +14,7 @@ from dataclasses import dataclass
 # 경로
 # ──────────────────────────────────────────────
 BASE_DIR = Path(__file__).resolve().parent
-DATA_DIR = BASE_DIR.parent / "01_Research" / "data"
+DATA_DIR = BASE_DIR.parent / "data"
 OUTPUT_DIR = BASE_DIR / "outputs"
 OUTPUT_DIR.mkdir(exist_ok=True)
 
@@ -181,4 +181,5 @@ PRICING_VERSION = "2026-03-30-estimate"  # 가격 변경 시 업데이트
 COST_PER_1K_TOKENS = {
     "gpt-5.4": {"input": 0.005, "output": 0.015},
     "exaone-4.0-32b": {"input": 0.003, "output": 0.009},   # 추정치
-    "exaone-deep-7.8b": {"in
+    "exaone-deep-7.8b": {"input": 0.001, "output": 0.003},   # 추정치
+}

@@ -1,14 +1,8 @@
 "use client";
 
 import {
-  BarChart,
-  Bar,
-  XAxis,
-  YAxis,
-  CartesianGrid,
-  Tooltip,
-  Legend,
-  ResponsiveContainer,
+  BarChart, Bar, XAxis, YAxis, CartesianGrid,
+  Tooltip, Legend, ResponsiveContainer,
 } from "recharts";
 
 const GROUP_COLORS: Record<string, string> = {
@@ -20,12 +14,11 @@ const GROUP_COLORS: Record<string, string> = {
   "Group F": "#6FD195",
 };
 
-const data = [
-  { metric: "Accuracy",  "Group A": 55, "Group B": 10, "Group C": 47, "Group D": 10, "Group E": 38, "Group F": 10 },
-  { metric: "F1-Score",  "Group A": 49, "Group B": 21, "Group C": 85, "Group D": 35, "Group E": 40, "Group F": 24 },
-];
+interface Props {
+  data: Record<string, string | number>[];
+}
 
-export default function GroupBarChart() {
+export default function GroupBarChart({ data }: Props) {
   return (
     <ResponsiveContainer width="100%" height="100%">
       <BarChart
@@ -34,11 +27,7 @@ export default function GroupBarChart() {
         barCategoryGap="28%"
         barGap={1}
       >
-        <CartesianGrid
-          strokeDasharray="4 4"
-          stroke="rgba(0,0,0,0.08)"
-          vertical={false}
-        />
+        <CartesianGrid strokeDasharray="4 4" stroke="rgba(0,0,0,0.08)" vertical={false} />
         <XAxis
           dataKey="metric"
           tick={{ fontSize: 10, fill: "rgba(0,0,0,0.7)", fontFamily: "Inter, sans-serif" }}
@@ -63,20 +52,10 @@ export default function GroupBarChart() {
         <Legend
           iconType="square"
           iconSize={8}
-          wrapperStyle={{
-            fontSize: "10px",
-            fontFamily: "Inter, sans-serif",
-            color: "rgba(0,0,0,0.7)",
-          }}
+          wrapperStyle={{ fontSize: "10px", fontFamily: "Inter, sans-serif", color: "rgba(0,0,0,0.7)" }}
         />
         {Object.entries(GROUP_COLORS).map(([group, color]) => (
-          <Bar
-            key={group}
-            dataKey={group}
-            fill={color}
-            fillOpacity={0.8}
-            radius={[2, 2, 0, 0]}
-          />
+          <Bar key={group} dataKey={group} fill={color} fillOpacity={0.8} radius={[2, 2, 0, 0]} />
         ))}
       </BarChart>
     </ResponsiveContainer>

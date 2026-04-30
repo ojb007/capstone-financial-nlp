@@ -12,6 +12,7 @@ Codex audit 반영:
 - 🟡9: avg_latency 분모를 유효 latency 수로 수정
 """
 
+import sys
 import json
 import time
 import random
@@ -19,6 +20,11 @@ import logging
 from pathlib import Path
 from datetime import datetime
 from typing import List, Dict, Any, Optional
+
+# 프로젝트 루트를 sys.path에 추가 (backend 패키지 import용)
+_PROJECT_ROOT = Path(__file__).resolve().parent.parent
+if str(_PROJECT_ROOT) not in sys.path:
+    sys.path.insert(0, str(_PROJECT_ROOT))
 
 from config import (
     MODELS, EXPERIMENT_GROUPS, DATASETS, OUTPUT_DIR,
@@ -398,18 +404,11 @@ class ExperimentRunner:
         return summary
 
     def _get_rag_context(self, formatted: Dict[str, Any]) -> Optional[str]:
-        """
-        RAG 검색. 현재 placeholder — 오정빈 RAG 파이프라인 완성 후 연동.
-        연동 시 self.rag_active = True 로 변경.
-        """
-        # TODO: 오정빈 RAG 파이프라인 연동
-        # from backend.app.services.vector_store import search
-        # results = search(formatted["input_text"], top_k=3)
-        # self.rag_active = True
-        # return "\n\n".join([r.page_content for r in results])
-
-        logger.debug(f"[RAG] placeholder — 실제 RAG 미연동 상태")
-        return None
+        """FAISS 벡터 스토어에서 유사 문서 검색."""
+        from backend.app.services.vector_store import search
+        results = search(formatted["input_text"], top_k=3)
+        self.rag_active = True
+        return "\n\n".join(r.page_content for r in results) if results else None
 
 
 # ══════════════════════════════════════════════

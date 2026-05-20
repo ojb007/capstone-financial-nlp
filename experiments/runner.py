@@ -30,7 +30,7 @@ from config import (
     MODELS, EXPERIMENT_GROUPS, DATASETS, OUTPUT_DIR,
     RETRY_MAX, RETRY_BASE_DELAY, RETRY_MAX_WAIT, SAVE_EVERY,
     COST_PER_1K_TOKENS, PRICING_VERSION,
-    OPENAI_API_KEY, EXAONE_API_KEY, EXAONE_API_BASE,
+    OPENAI_API_KEY, HF_TOKEN,
 )
 from data_loader import load_dataset, format_for_experiment
 from prompts import build_prompt
@@ -43,7 +43,7 @@ logger = logging.getLogger(__name__)
 # ══════════════════════════════════════════════
 
 class LLMClient:
-    """OpenAI / EXAONE API 통합 클라이언트."""
+    """OpenAI API 클라이언트 (A/B/C군)."""
 
     def __init__(self, model_key: str):
         self.model_cfg = MODELS[model_key]
@@ -65,22 +65,6 @@ class LLMClient:
                 )
             except ImportError:
                 logger.warning("openai 패키지 미설치. pip install openai")
-        elif self.provider == "exaone":
-            if EXAONE_API_BASE:
-                try:
-                    from openai import OpenAI
-                    self._client = OpenAI(
-                        api_key=EXAONE_API_KEY,
-                        base_url=EXAONE_API_BASE,
-                        timeout=self.timeout,
-                    )
-                except ImportError:
-                    logger.warning("openai 패키지 미설치.")
-            else:
-                logger.warning(
-                    f"EXAONE API 엔드포인트 미설정 (EXAONE_API_BASE). "
-                    f"멘토 확인 후 config.py에 설정하세요."
-                )
 
     def call(self, messages: List[Dict[str, str]]) -> Dict[str, Any]:
         """
@@ -157,6 +141,76 @@ class LLMClient:
         return result  # 마지막 시도 결과
 
 
+class LocalHFClient:
+    """로컬 transformers 추론 클라이언트 (F군 QLoRA 파인튜닝 모델)."""
+
+    def __init__(self, model_id: str, max_tokens: int = 512):
+        import torch
+        from transformers import AutoTokenizer, AutoModelForCausalLM
+
+        token = HF_TOKEN or None
+        logger.info(f"HF 모델 로딩: {model_id}")
+        self.tokenizer = AutoTokenizer.from_pretrained(model_id, token=token)
+        self.model = AutoModelForCausalLM.from_pretrained(
+            model_id,
+            torch_dtype=torch.float16,
+            device_map="auto",
+            token=token,
+        )
+        self.model.eval()
+        self.max_tokens = max_tokens
+        logger.info(f"모델 로딩 완료: {model_id}")
+
+    def call(self, messages: List[Dict[str, str]]) -> Dict[str, Any]:
+        import torch
+
+        try:
+            text = self.tokenizer.apply_chat_template(
+                messages, tokenize=False, add_generation_prompt=True
+            )
+        except Exception:
+            text = "\n".join(
+                f"{m['role'].upper()}: {m['content']}" for m in messages
+            ) + "\nASSISTANT:"
+
+        inputs = self.tokenizer(text, return_tensors="pt").to(self.model.device)
+        input_len = inputs["input_ids"].shape[1]
+
+        start = time.perf_counter()
+        try:
+            with torch.no_grad():
+                outputs = self.model.generate(
+                    **inputs,
+                    max_new_tokens=self.max_tokens,
+                    do_sample=False,
+                    pad_token_id=self.tokenizer.eos_token_id,
+                )
+            elapsed = (time.perf_counter() - start) * 1000
+            generated_ids = outputs[0][input_len:]
+            response = self.tokenizer.decode(generated_ids, skip_special_tokens=True).strip()
+            return {
+                "response": response,
+                "latency_ms": round(elapsed, 2),
+                "input_tokens": input_len,
+                "output_tokens": len(generated_ids),
+                "error": None,
+                "error_type": None,
+            }
+        except Exception as e:
+            elapsed = (time.perf_counter() - start) * 1000
+            return {
+                "response": "",
+                "latency_ms": round(elapsed, 2),
+                "input_tokens": input_len,
+                "output_tokens": 0,
+                "error": str(e),
+                "error_type": "inference_error",
+            }
+
+    def call_with_retry(self, messages: List[Dict[str, str]]) -> Dict[str, Any]:
+        return self.call(messages)
+
+
 def _classify_error(e: Exception) -> str:
     """예외를 분류하여 재시도 여부 결정에 사용."""
     error_str = str(e).lower()
@@ -215,7 +269,14 @@ class ExperimentRunner:
         self.output_dir = OUTPUT_DIR / self.experiment_id
         self.output_dir.mkdir(parents=True, exist_ok=True)
 
-        self.client = LLMClient(self.group.model)
+        if self.group.use_finetuning:
+            model_cfg = MODELS[self.group.model]
+            self.client = LocalHFClient(
+                model_id=model_cfg["model_name"],
+                max_tokens=model_cfg.get("max_tokens", 512),
+            )
+        else:
+            self.client = LLMClient(self.group.model)
         self.results: List[Dict[str, Any]] = []
         self.total_cost = 0.0
 

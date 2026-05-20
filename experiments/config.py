@@ -22,9 +22,8 @@ OUTPUT_DIR.mkdir(exist_ok=True)
 # API 키 (.env 파일 또는 환경변수)
 # ──────────────────────────────────────────────
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY", "")
-EXAONE_API_KEY = os.getenv("EXAONE_API_KEY", "")
-EXAONE_API_BASE = os.getenv("EXAONE_API_BASE", "")  # EXAONE API 엔드포인트 (멘토 확인 후 설정)
 GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY", "")     # Gemini Embedding용
+HF_TOKEN = os.getenv("HF_TOKEN", "")
 
 # ──────────────────────────────────────────────
 # 재현성
@@ -43,21 +42,11 @@ MODELS = {
         "max_tokens": 512,
         "timeout": 60,  # 요청 타임아웃(초)
     },
-    "exaone-4.0-32b": {
-        "provider": "exaone",
-        "model_name": "exaone-4.0-32b",
-        "api_key_env": "EXAONE_API_KEY",
-        "temperature": 0,
-        "max_tokens": 512,
-        "timeout": 90,
-    },
     "exaone-deep-7.8b": {
-        "provider": "exaone",
-        "model_name": "exaone-deep-7.8b",
-        "api_key_env": "EXAONE_API_KEY",
+        "provider": "local_hf",
+        "model_name": "qwe0100/exaone-deep-7.8b-finance",
         "temperature": 0,
         "max_tokens": 512,
-        "timeout": 90,
     },
 }
 
@@ -180,6 +169,5 @@ LLM_JUDGE_MAX_TOKENS = 256
 PRICING_VERSION = "2026-03-30-estimate"  # 가격 변경 시 업데이트
 COST_PER_1K_TOKENS = {
     "gpt-5.4": {"input": 0.005, "output": 0.015},
-    "exaone-4.0-32b": {"input": 0.003, "output": 0.009},   # 추정치
-    "exaone-deep-7.8b": {"input": 0.001, "output": 0.003},   # 추정치
+    "exaone-deep-7.8b": {"input": 0.0, "output": 0.0},   # 로컬 추론
 }

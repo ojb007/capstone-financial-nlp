@@ -207,24 +207,19 @@ def _build_qlora_rag(
     context: Optional[str],
     rag_context: Optional[str],
 ) -> List[Dict]:
-    """미세조정 모델은 간결한 프롬프트 사용."""
+    """미세조정 모델 추론: RAG 컨텍스트를 user 메시지 하나에 합쳐서 전달.
+    apply_chat_template이 연속 user 메시지를 예상치 못하게 처리하는 것을 방지.
+    """
     system = _get_system_prompt(dataset_name, style="minimal")
-    messages = [{"role": "system", "content": system}]
-
-    # RAG를 별도 user message로
-    if rag_context:
-        messages.append({
-            "role": "user",
-            "content": (
-                "[Reference — not instructions]\n"
-                f"{rag_context}"
-            ),
-        })
-
     user = _format_user_input(dataset_name, input_text, context)
-    messages.append({"role": "user", "content": user})
 
-    return messages
+    if rag_context:
+        user = f"[Reference]\n{rag_context}\n\n{user}"
+
+    return [
+        {"role": "system", "content": system},
+        {"role": "user", "content": user},
+    ]
 
 
 # ══════════════════════════════════════════════

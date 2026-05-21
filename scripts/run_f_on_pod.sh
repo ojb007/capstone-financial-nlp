@@ -5,10 +5,10 @@
 set -e
 
 echo "=== 패키지 설치 ==="
-# bitsandbytes: 4-bit 양자화 필수 (exaone_qlora_runpod.ipynb 와 동일 환경)
-pip install -q --upgrade transformers
+# transformers 4.46.2 + peft 0.13.2: PyTorch 2.4.x 호환 확인된 버전
+pip install -q transformers==4.46.2 peft==0.13.2
 pip install -q openai python-dotenv faiss-cpu \
-    accelerate peft bitsandbytes datasets huggingface_hub
+    accelerate bitsandbytes datasets huggingface_hub
 
 echo "=== FAISS 인덱스 확인 ==="
 if [ -f "backend/faiss_index/index.faiss" ]; then

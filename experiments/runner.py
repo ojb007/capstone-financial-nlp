@@ -150,13 +150,17 @@ class LocalHFClient:
         from peft import PeftModel, PeftConfig
 
         token = HF_TOKEN or None
+        if token:
+            from huggingface_hub import login as _hf_login
+            _hf_login(token=token, add_to_git_credential=False)
+
         logger.info(f"HF 모델 로딩 (LoRA 어댑터): {model_id}")
         self.tokenizer = AutoTokenizer.from_pretrained(
-            model_id, token=token, trust_remote_code=True
+            model_id, trust_remote_code=True
         )
 
         # adapter_config.json에서 베이스 모델 ID 파악
-        peft_cfg = PeftConfig.from_pretrained(model_id, token=token)
+        peft_cfg = PeftConfig.from_pretrained(model_id)
         base_model_id = peft_cfg.base_model_name_or_path
         logger.info(f"베이스 모델: {base_model_id}")
 
@@ -164,7 +168,6 @@ class LocalHFClient:
             base_model_id,
             torch_dtype=torch.float16,
             device_map="auto",
-            token=token,
             trust_remote_code=True,
         )
 
@@ -176,8 +179,7 @@ class LocalHFClient:
         except AttributeError:
             pass
 
-        self.model = PeftModel.from_pretrained(base, model_id, token=token)
-        self.model.eval()
+        self.model = PeftModel.from_pretrained(base, model_id)
         self.model.eval()
         self.max_tokens = max_tokens
         logger.info(f"모델 로딩 완료: {model_id}")

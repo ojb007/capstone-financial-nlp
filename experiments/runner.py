@@ -256,14 +256,16 @@ class ExperimentRunner:
         self.dry_run_n = dry_run_n
         self.allow_rag_placeholder = allow_rag_placeholder
 
-        # 🔴1: RAG 미연동 시 안전 차단
+        # 🔴1: RAG 연동 확인 (import 성공 여부로 판단)
         self.rag_active = False
         if self.group.use_rag and not self.allow_rag_placeholder:
-            raise RuntimeError(
-                f"실험군 {group_name}은 RAG가 필요하지만 RAG 파이프라인이 미연동 상태입니다. "
-                f"RAG 없이 실행하려면 --allow-rag-placeholder 플래그를 사용하세요. "
-                f"단, 결과에 rag_active=false가 기록되며 정식 비교에 포함하면 안 됩니다."
-            )
+            try:
+                from backend.app.services.vector_store import search as _rag_check  # noqa: F401
+            except Exception as e:
+                raise RuntimeError(
+                    f"실험군 {group_name}은 RAG가 필요하지만 RAG 파이프라인 임포트 실패: {e}. "
+                    f"FAISS 인덱스가 빌드되었는지 확인하세요."
+                ) from e
 
         self.experiment_id = f"{group_name}_{dataset_name}"
         self.output_dir = OUTPUT_DIR / self.experiment_id

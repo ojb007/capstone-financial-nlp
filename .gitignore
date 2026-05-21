@@ -1,6 +1,5 @@
 # Backend generated files
 backend/results.db
-backend/faiss_index/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

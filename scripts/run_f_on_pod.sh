@@ -10,8 +10,13 @@ pip install -q --upgrade transformers
 pip install -q openai python-dotenv faiss-cpu \
     accelerate peft bitsandbytes datasets huggingface_hub
 
-echo "=== FAISS 인덱스 빌드 ==="
-python backend/build_index.py
+echo "=== FAISS 인덱스 확인 ==="
+if [ -f "backend/faiss_index/index.faiss" ]; then
+    echo "인덱스 이미 존재, 빌드 생략"
+else
+    echo "인덱스 없음, 빌드 시작..."
+    python backend/build_index.py
+fi
 
 echo "=== F군 실험 실행 ==="
 cd experiments

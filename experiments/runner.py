@@ -146,14 +146,15 @@ class LocalHFClient:
 
     def __init__(self, model_id: str, max_tokens: int = 512):
         import torch
-        from transformers import AutoTokenizer, AutoModelForCausalLM
+        from transformers import AutoTokenizer
+        from peft import AutoPeftModelForCausalLM
 
         token = HF_TOKEN or None
-        logger.info(f"HF 모델 로딩: {model_id}")
+        logger.info(f"HF 모델 로딩 (LoRA 어댑터): {model_id}")
         self.tokenizer = AutoTokenizer.from_pretrained(
             model_id, token=token, trust_remote_code=True
         )
-        self.model = AutoModelForCausalLM.from_pretrained(
+        self.model = AutoPeftModelForCausalLM.from_pretrained(
             model_id,
             torch_dtype=torch.float16,
             device_map="auto",

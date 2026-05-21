@@ -59,10 +59,15 @@ class LLMClient:
         if self.provider == "openai":
             try:
                 from openai import OpenAI
+                api_key = self.model_cfg.get("api_key", OPENAI_API_KEY)
+                base_url = self.model_cfg.get("base_url", None)
                 self._client = OpenAI(
-                    api_key=OPENAI_API_KEY,
+                    api_key=api_key,
+                    base_url=base_url,
                     timeout=self.timeout,
                 )
+                if base_url:
+                    logger.info(f"vLLM 엔드포인트 연결: {base_url}")
             except ImportError:
                 logger.warning("openai 패키지 미설치. pip install openai")
 
@@ -142,11 +147,17 @@ class LLMClient:
 
 
 class LocalHFClient:
-    """로컬 transformers 추론 클라이언트 (F군 QLoRA 파인튜닝 모델)."""
+    """로컬 transformers 추론 클라이언트 (F군 QLoRA 파인튜닝 모델).
+
+    exaone_qlora_runpod.ipynb 와 동일한 방식으로 로드:
+    - BitsAndBytesConfig(load_in_4bit=True, nf4, float16) 적용
+    - 7.8B 모델 기준 약 5~6 GB VRAM으로 추론 가능 (양자화 없으면 ~16 GB)
+    - bitsandbytes 패키지 필요: pip install bitsandbytes
+    """
 
     def __init__(self, model_id: str, max_tokens: int = 512):
         import torch
-        from transformers import AutoTokenizer, AutoModelForCausalLM
+        from transformers import AutoTokenizer, AutoModelForCausalLM, BitsAndBytesConfig
         from peft import PeftModel, PeftConfig
 
         token = HF_TOKEN or None
@@ -158,26 +169,28 @@ class LocalHFClient:
         self.tokenizer = AutoTokenizer.from_pretrained(
             model_id, trust_remote_code=True
         )
+        self.tokenizer.pad_token = self.tokenizer.eos_token
+        self.tokenizer.padding_side = "right"
 
         # adapter_config.json에서 베이스 모델 ID 파악
         peft_cfg = PeftConfig.from_pretrained(model_id)
         base_model_id = peft_cfg.base_model_name_or_path
         logger.info(f"베이스 모델: {base_model_id}")
 
+        # 4-bit 양자화 설정 (노트북과 동일, GPU 필수)
+        bnb_config = BitsAndBytesConfig(
+            load_in_4bit=True,
+            bnb_4bit_quant_type="nf4",
+            bnb_4bit_compute_dtype=torch.float16,
+            bnb_4bit_use_double_quant=True,
+        )
+
         base = AutoModelForCausalLM.from_pretrained(
             base_model_id,
-            torch_dtype=torch.float16,
+            quantization_config=bnb_config,
             device_map="auto",
             trust_remote_code=True,
         )
-
-        # EXAONE 커스텀 모델의 get_input_embeddings를 PEFT가 찾을 수 있도록 패치
-        try:
-            _embed = base.model.embed_tokens
-            base.get_input_embeddings = lambda: _embed
-            base.set_input_embeddings = lambda x: setattr(base.model, "embed_tokens", x)
-        except AttributeError:
-            pass
 
         self.model = PeftModel.from_pretrained(base, model_id)
         self.model.eval()

@@ -24,6 +24,7 @@ OUTPUT_DIR.mkdir(exist_ok=True)
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY", "")
 GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY", "")     # Gemini Embedding용
 HF_TOKEN = os.getenv("HF_TOKEN", "")
+VLLM_BASE_URL = os.getenv("VLLM_BASE_URL", "http://localhost:8000/v1")  # RunPod vLLM 서버 주소
 
 # ──────────────────────────────────────────────
 # 재현성
@@ -40,7 +41,16 @@ MODELS = {
         "api_key_env": "OPENAI_API_KEY",
         "temperature": 0,
         "max_tokens": 512,
-        "timeout": 60,  # 요청 타임아웃(초)
+        "timeout": 60,
+    },
+    "exaone-4.0-32b": {
+        "provider": "openai",           # vLLM이 OpenAI 호환 API 제공
+        "model_name": "LGAI-EXAONE/EXAONE-4.0-32B",  # vLLM에 올린 모델명
+        "base_url": VLLM_BASE_URL,      # RunPod vLLM 서버 주소
+        "api_key": "EMPTY",             # vLLM은 키 불필요
+        "temperature": 0,
+        "max_tokens": 512,
+        "timeout": 120,
     },
     "exaone-deep-7.8b": {
         "provider": "local_hf",

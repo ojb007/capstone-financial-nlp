@@ -5,8 +5,10 @@
 set -e
 
 echo "=== 패키지 설치 ==="
-pip install -q openai python-dotenv faiss-cpu langchain langchain-community \
-    langchain-openai transformers accelerate torch peft
+# bitsandbytes: 4-bit 양자화 필수 (exaone_qlora_runpod.ipynb 와 동일 환경)
+pip install -q --upgrade transformers
+pip install -q openai python-dotenv faiss-cpu \
+    accelerate peft bitsandbytes datasets huggingface_hub
 
 echo "=== FAISS 인덱스 빌드 ==="
 python backend/build_index.py

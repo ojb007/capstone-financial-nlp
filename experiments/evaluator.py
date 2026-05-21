@@ -198,6 +198,12 @@ def _normalize_label(text: str, dataset_name: str) -> str:
     text = text.strip()
 
     if dataset_name in ("fpb", "fiqa_sa"):
+        # fiqa_sa gold labels are continuous scores (e.g. -0.374); convert to category
+        try:
+            score = float(text)
+            return "positive" if score > 0 else ("negative" if score < 0 else "neutral")
+        except ValueError:
+            pass
         return _normalize_sentiment(text)
     elif dataset_name == "financial_mmlu_ko":
         return _normalize_mmlu_choice(text)
@@ -507,7 +513,7 @@ def evaluate_experiment(
             except json.JSONDecodeError:
                 continue
 
-    logger.info(f"\n📊 평가 시작: {experiment_id} ({len(predictions)}건)")
+    logger.info(f"\n[평가 시작] {experiment_id} ({len(predictions)}건)")
 
     # 기본 지표
     metrics = compute_metrics(predictions, dataset_name)
@@ -540,7 +546,7 @@ def evaluate_experiment(
     with open(metrics_path, "w", encoding="utf-8") as f:
         json.dump(metrics, f, indent=2, ensure_ascii=False)
 
-    logger.info(f"✅ 평가 완료: {metrics_path}")
+    logger.info(f"[평가 완료] {metrics_path}")
     _print_metrics_summary(metrics, experiment_id)
 
     return metrics
@@ -549,7 +555,7 @@ def evaluate_experiment(
 def _print_metrics_summary(metrics: Dict, experiment_id: str):
     """평가 결과 요약 출력."""
     print(f"\n{'─'*50}")
-    print(f"📊 {experiment_id} 평가 결과")
+    print(f"[결과] {experiment_id}")
     print(f"{'─'*50}")
 
     if "accuracy" in metrics:

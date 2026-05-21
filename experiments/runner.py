@@ -150,12 +150,15 @@ class LocalHFClient:
 
         token = HF_TOKEN or None
         logger.info(f"HF 모델 로딩: {model_id}")
-        self.tokenizer = AutoTokenizer.from_pretrained(model_id, token=token)
+        self.tokenizer = AutoTokenizer.from_pretrained(
+            model_id, token=token, trust_remote_code=True
+        )
         self.model = AutoModelForCausalLM.from_pretrained(
             model_id,
             torch_dtype=torch.float16,
             device_map="auto",
             token=token,
+            trust_remote_code=True,
         )
         self.model.eval()
         self.max_tokens = max_tokens

@@ -145,22 +145,42 @@ class LocalHFClient:
     """로컬 transformers 추론 클라이언트 (F군 QLoRA 파인튜닝 모델)."""
 
     def __init__(self, model_id: str, max_tokens: int = 512):
+        import json
         import torch
-        from transformers import AutoTokenizer
-        from peft import AutoPeftModelForCausalLM
+        from transformers import AutoTokenizer, AutoModelForCausalLM
+        from peft import PeftModel
+        from huggingface_hub import hf_hub_download
 
         token = HF_TOKEN or None
         logger.info(f"HF 모델 로딩 (LoRA 어댑터): {model_id}")
         self.tokenizer = AutoTokenizer.from_pretrained(
             model_id, token=token, trust_remote_code=True
         )
-        self.model = AutoPeftModelForCausalLM.from_pretrained(
-            model_id,
+
+        # adapter_config.json에서 베이스 모델 ID 파악
+        cfg_path = hf_hub_download(model_id, "adapter_config.json", token=token)
+        with open(cfg_path) as f:
+            base_model_id = json.load(f)["base_model_name_or_path"]
+        logger.info(f"베이스 모델: {base_model_id}")
+
+        base = AutoModelForCausalLM.from_pretrained(
+            base_model_id,
             torch_dtype=torch.float16,
             device_map="auto",
             token=token,
             trust_remote_code=True,
         )
+
+        # EXAONE 커스텀 모델의 get_input_embeddings를 PEFT가 찾을 수 있도록 패치
+        try:
+            _embed = base.model.embed_tokens
+            base.get_input_embeddings = lambda: _embed
+            base.set_input_embeddings = lambda x: setattr(base.model, "embed_tokens", x)
+        except AttributeError:
+            pass
+
+        self.model = PeftModel.from_pretrained(base, model_id, token=token)
+        self.model.eval()
         self.model.eval()
         self.max_tokens = max_tokens
         logger.info(f"모델 로딩 완료: {model_id}")

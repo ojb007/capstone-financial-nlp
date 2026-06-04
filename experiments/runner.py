@@ -147,53 +147,61 @@ class LLMClient:
 
 
 class LocalHFClient:
-    """로컬 transformers 추론 클라이언트 (F군 QLoRA 파인튜닝 모델).
+    """로컬 추론 클라이언트 (F군 QLoRA 파인튜닝 모델).
 
-    exaone_qlora_runpod.ipynb 와 동일한 방식으로 로드:
-    - BitsAndBytesConfig(load_in_4bit=True, nf4, float16) 적용
-    - 7.8B 모델 기준 약 5~6 GB VRAM으로 추론 가능 (양자화 없으면 ~16 GB)
-    - bitsandbytes 패키지 필요: pip install bitsandbytes
+    Unsloth가 설치되어 있으면 FastLanguageModel로 로드 (bitsandbytes 버전 충돌 우회).
+    없으면 순정 transformers + PEFT + BitsAndBytesConfig로 폴백.
     """
 
     def __init__(self, model_id: str, max_tokens: int = 512):
-        import torch
-        from transformers import AutoTokenizer, AutoModelForCausalLM, BitsAndBytesConfig
-        from peft import PeftModel, PeftConfig
-
         token = HF_TOKEN or None
         if token:
             from huggingface_hub import login as _hf_login
             _hf_login(token=token, add_to_git_credential=False)
 
-        logger.info(f"HF 모델 로딩 (LoRA 어댑터): {model_id}")
-        self.tokenizer = AutoTokenizer.from_pretrained(
-            model_id, trust_remote_code=True
-        )
-        self.tokenizer.pad_token = self.tokenizer.eos_token
-        self.tokenizer.padding_side = "right"
+        try:
+            from unsloth import FastLanguageModel
+            logger.info(f"Unsloth로 모델 로딩: {model_id}")
+            self.model, self.tokenizer = FastLanguageModel.from_pretrained(
+                model_name=model_id,
+                max_seq_length=2048,
+                dtype=None,
+                load_in_4bit=True,
+                trust_remote_code=True,
+            )
+            FastLanguageModel.for_inference(self.model)
+            logger.info("Unsloth 추론 모드 활성화 완료")
+        except (ImportError, NotImplementedError):
+            import torch
+            from transformers import AutoTokenizer, AutoModelForCausalLM, BitsAndBytesConfig
+            from peft import PeftModel, PeftConfig
 
-        # adapter_config.json에서 베이스 모델 ID 파악
-        peft_cfg = PeftConfig.from_pretrained(model_id)
-        base_model_id = peft_cfg.base_model_name_or_path
-        logger.info(f"베이스 모델: {base_model_id}")
+            logger.warning("Unsloth 미설치 — transformers+PEFT 폴백으로 로딩")
+            self.tokenizer = AutoTokenizer.from_pretrained(
+                model_id, trust_remote_code=True
+            )
+            self.tokenizer.pad_token = self.tokenizer.eos_token
+            self.tokenizer.padding_side = "right"
 
-        # 4-bit 양자화 설정 (노트북과 동일, GPU 필수)
-        bnb_config = BitsAndBytesConfig(
-            load_in_4bit=True,
-            bnb_4bit_quant_type="nf4",
-            bnb_4bit_compute_dtype=torch.float16,
-            bnb_4bit_use_double_quant=True,
-        )
+            peft_cfg = PeftConfig.from_pretrained(model_id)
+            base_model_id = peft_cfg.base_model_name_or_path
+            logger.info(f"베이스 모델: {base_model_id}")
 
-        base = AutoModelForCausalLM.from_pretrained(
-            base_model_id,
-            quantization_config=bnb_config,
-            device_map="auto",
-            trust_remote_code=True,
-        )
+            bnb_config = BitsAndBytesConfig(
+                load_in_4bit=True,
+                bnb_4bit_quant_type="nf4",
+                bnb_4bit_compute_dtype=torch.float16,
+                bnb_4bit_use_double_quant=True,
+            )
+            base = AutoModelForCausalLM.from_pretrained(
+                base_model_id,
+                quantization_config=bnb_config,
+                device_map="auto",
+                trust_remote_code=True,
+            )
+            self.model = PeftModel.from_pretrained(base, model_id)
+            self.model.eval()
 
-        self.model = PeftModel.from_pretrained(base, model_id)
-        self.model.eval()
         self.max_tokens = max_tokens
         logger.info(f"모델 로딩 완료: {model_id}")
 
@@ -584,3 +592,28 @@ def run_all_experiments(
     logger.info(f"   요약: {all_summary_path}")
 
     return summaries
+
+
+if __name__ == "__main__":
+    import argparse
+
+    logging.basicConfig(
+        level=logging.INFO,
+        format="%(asctime)s [%(levelname)s] %(message)s",
+    )
+
+    parser = argparse.ArgumentParser(description="실험 실행")
+    parser.add_argument("--groups", nargs="+", default=None,
+                        help="실험군 (예: F  또는  D E F)")
+    parser.add_argument("--datasets", nargs="+", default=None,
+                        help="데이터셋 (예: fpb fiqa_sa finqa financial_mmlu_ko)")
+    parser.add_argument("--dry-run", action="store_true",
+                        help="건당 5개만 테스트 실행")
+    args = parser.parse_args()
+
+    summaries = run_all_experiments(
+        groups=args.groups,
+        datasets=args.datasets,
+        dry_run=args.dry_run,
+        dry_run_n=5,
+    )

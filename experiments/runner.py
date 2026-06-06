@@ -185,12 +185,12 @@ class LocalHFClient:
             )
             FastLanguageModel.for_inference(self.model)
             logger.info("Unsloth 추론 모드 활성화 완료")
-        except Exception:
+        except Exception as _unsloth_err:
             import torch
             from transformers import AutoTokenizer, AutoModelForCausalLM, BitsAndBytesConfig
             from peft import PeftModel, PeftConfig
 
-            logger.warning("Unsloth 실패 — transformers+PEFT 폴백으로 로딩")
+            logger.warning(f"Unsloth 실패 ({type(_unsloth_err).__name__}: {_unsloth_err}) — transformers+PEFT 폴백으로 로딩")
             self.tokenizer = AutoTokenizer.from_pretrained(
                 local_model_path, trust_remote_code=True
             )

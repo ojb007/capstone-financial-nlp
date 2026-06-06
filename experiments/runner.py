@@ -12,6 +12,8 @@ Codex audit 반영:
 - 🟡9: avg_latency 분모를 유효 latency 수로 수정
 """
 
+import unsloth  # noqa: F401 — Unsloth 최적화 적용을 위해 반드시 먼저 import
+
 import sys
 import json
 import time
@@ -20,6 +22,9 @@ import logging
 from pathlib import Path
 from datetime import datetime
 from typing import List, Dict, Any, Optional
+
+# F군 모델 캐시 — 데이터셋마다 재로딩하지 않도록
+_local_hf_client_cache: Dict[str, "LocalHFClient"] = {}
 
 # 프로젝트 루트를 sys.path에 추가 (backend 패키지 import용)
 _PROJECT_ROOT = Path(__file__).resolve().parent.parent
@@ -159,11 +164,20 @@ class LocalHFClient:
             from huggingface_hub import login as _hf_login
             _hf_login(token=token, add_to_git_credential=False)
 
+        # 어댑터를 로컬에 먼저 다운로드 (PEFT 버전 무관하게 로컬 경로 사용)
+        from huggingface_hub import snapshot_download
+        try:
+            local_model_path = snapshot_download(model_id, token=token)
+            logger.info(f"어댑터 로컬 경로: {local_model_path}")
+        except Exception as e:
+            logger.warning(f"어댑터 다운로드 실패, HF ID 직접 사용: {e}")
+            local_model_path = model_id
+
         try:
             from unsloth import FastLanguageModel
             logger.info(f"Unsloth로 모델 로딩: {model_id}")
             self.model, self.tokenizer = FastLanguageModel.from_pretrained(
-                model_name=model_id,
+                model_name=local_model_path,
                 max_seq_length=2048,
                 dtype=None,
                 load_in_4bit=True,
@@ -171,19 +185,19 @@ class LocalHFClient:
             )
             FastLanguageModel.for_inference(self.model)
             logger.info("Unsloth 추론 모드 활성화 완료")
-        except (ImportError, NotImplementedError):
+        except Exception:
             import torch
             from transformers import AutoTokenizer, AutoModelForCausalLM, BitsAndBytesConfig
             from peft import PeftModel, PeftConfig
 
-            logger.warning("Unsloth 미설치 — transformers+PEFT 폴백으로 로딩")
+            logger.warning("Unsloth 실패 — transformers+PEFT 폴백으로 로딩")
             self.tokenizer = AutoTokenizer.from_pretrained(
-                model_id, trust_remote_code=True
+                local_model_path, trust_remote_code=True
             )
             self.tokenizer.pad_token = self.tokenizer.eos_token
             self.tokenizer.padding_side = "right"
 
-            peft_cfg = PeftConfig.from_pretrained(model_id)
+            peft_cfg = PeftConfig.from_pretrained(local_model_path)
             base_model_id = peft_cfg.base_model_name_or_path
             logger.info(f"베이스 모델: {base_model_id}")
 
@@ -199,7 +213,7 @@ class LocalHFClient:
                 device_map="auto",
                 trust_remote_code=True,
             )
-            self.model = PeftModel.from_pretrained(base, model_id)
+            self.model = PeftModel.from_pretrained(base, local_model_path)
             self.model.eval()
 
         self.max_tokens = max_tokens
@@ -317,10 +331,13 @@ class ExperimentRunner:
 
         if self.group.use_finetuning:
             model_cfg = MODELS[self.group.model]
-            self.client = LocalHFClient(
-                model_id=model_cfg["model_name"],
-                max_tokens=model_cfg.get("max_tokens", 512),
-            )
+            model_id = model_cfg["model_name"]
+            if model_id not in _local_hf_client_cache:
+                _local_hf_client_cache[model_id] = LocalHFClient(
+                    model_id=model_id,
+                    max_tokens=model_cfg.get("max_tokens", 512),
+                )
+            self.client = _local_hf_client_cache[model_id]
         else:
             self.client = LLMClient(self.group.model)
         self.results: List[Dict[str, Any]] = []

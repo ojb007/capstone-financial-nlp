@@ -1,0 +1,17 @@
+{
+  "experiment_id": "F_fiqa_sa",
+  "group": "F",
+  "dataset": "fiqa_sa",
+  "model": "exaone-deep-7.8b",
+  "strategy": "qlora_rag",
+  "rag_active": true,
+  "total_records": 234,
+  "processed": 230,
+  "skipped_resumed": 4,
+  "errors": 0,
+  "total_cost_usd": 0.0,
+  "pricing_version": "2026-03-30-estimate",
+  "total_time_sec": 6552.84,
+  "avg_latency_ms": 28171.25,
+  "timestamp": "2026-06-07T01:20:58.550421"
+}

@@ -77,6 +77,7 @@ DATASETS = {
         "labels": ["positive", "negative", "neutral"],
         "language": "en",
         "description": "FiQA Sentiment Analysis (1.2K건)",
+        "default_split": "test",
     },
     "finqa": {
         "file": DATA_DIR / "finqa.unified.jsonl",

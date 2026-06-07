@@ -1,0 +1,17 @@
+{
+  "experiment_id": "F_finqa",
+  "group": "F",
+  "dataset": "finqa",
+  "model": "exaone-deep-7.8b",
+  "strategy": "qlora_rag",
+  "rag_active": true,
+  "total_records": 500,
+  "processed": 500,
+  "skipped_resumed": 0,
+  "errors": 0,
+  "total_cost_usd": 0.0,
+  "pricing_version": "2026-03-30-estimate",
+  "total_time_sec": 15974.57,
+  "avg_latency_ms": 31652.74,
+  "timestamp": "2026-06-07T05:47:13.269027"
+}

@@ -213,21 +213,40 @@ def _normalize_label(text: str, dataset_name: str) -> str:
 
 def _normalize_sentiment(text: str) -> str:
     """
-    감성 분류 엄격 매칭.
-    허용 패턴: 정확히 라벨만 / 따옴표 감싼 라벨 / JSON 형식
+    감성 분류 파싱 — EXAONE Deep CoT 출력 대응.
+    </thought> 이후 추출 또는 마지막 줄에서 라벨 찾기.
     """
+    # </thought> 이후 텍스트 추출 (EXAONE Deep CoT 패턴)
+    if "</thought>" in text:
+        text = text.split("</thought>")[-1].strip()
+
     cleaned = text.lower().strip().strip('"').strip("'").strip(".")
 
     # 정확 일치
     if cleaned in ("positive", "negative", "neutral"):
         return cleaned
 
-    # 첫 토큰만 확인 (모델이 "positive." 이나 "positive\n..." 같이 답할 때)
+    # 첫 토큰만 확인
     first_token = cleaned.split()[0].strip(".,;:!") if cleaned else ""
     if first_token in ("positive", "negative", "neutral"):
         return first_token
 
-    # JSON 형식: {"label": "positive"} 등
+    # 마지막 줄에서 찾기
+    lines = [l.strip().lower() for l in text.strip().split("\n") if l.strip()]
+    for line in reversed(lines):
+        line_clean = line.strip().strip('"').strip("'").strip(".,;:!")
+        if line_clean in ("positive", "negative", "neutral"):
+            return line_clean
+        first = line_clean.split()[0].strip(".,;:!") if line_clean else ""
+        if first in ("positive", "negative", "neutral"):
+            return first
+
+    # 텍스트 어디서든 라벨 찾기
+    for label in ("negative", "positive", "neutral"):
+        if re.search(rf"\b{label}\b", text.lower()):
+            return label
+
+    # JSON 형식
     json_match = re.search(r'"(?:label|sentiment|answer)"\s*:\s*"(positive|negative|neutral)"', cleaned)
     if json_match:
         return json_match.group(1)
@@ -240,8 +259,12 @@ def _normalize_mmlu_choice(text: str) -> str:
     🔴3: MMLU-KO 선택지 번호 엄격 파싱.
     첫 행에서만 추출, 명확한 답변 패턴만 허용.
     """
+    # </thought> 이후 텍스트만 사용
+    if "</thought>" in text:
+        text = text.split("</thought>")[-1].strip()
     # 첫 행만 사용
     first_line = text.strip().split("\n")[0].strip()
+
 
     # 패턴 1: 숫자만 (공백 허용) → "3", " 4 "
     if re.match(r'^\s*[1-5]\s*$', first_line):
@@ -318,6 +341,9 @@ def _normalize_answer(text: str) -> Dict[str, Any]:
     FinQA 답변 정규화.
     Returns: {canonical: str, value: Optional[float], type: str, is_percent: bool}
     """
+    # </thought> 이후 추출
+    if "</thought>" in text:
+        text = text.split("</thought>")[-1].strip()
     text = text.strip().lower()
 
     # Boolean

@@ -1,0 +1,17 @@
+{
+  "experiment_id": "F_fpb",
+  "group": "F",
+  "dataset": "fpb",
+  "model": "exaone-deep-7.8b",
+  "strategy": "qlora_rag",
+  "rag_active": true,
+  "total_records": 500,
+  "processed": 500,
+  "skipped_resumed": 0,
+  "errors": 0,
+  "total_cost_usd": 0.0,
+  "pricing_version": "2026-03-30-estimate",
+  "total_time_sec": 14363.22,
+  "avg_latency_ms": 28400.41,
+  "timestamp": "2026-06-06T23:31:45.701091"
+}

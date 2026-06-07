@@ -1,0 +1,16 @@
+{
+  "exact_match_rate": 0.06,
+  "numeric_close_rate": 0.034,
+  "combined_accuracy": 0.094,
+  "type_mismatch_count": 15,
+  "note": "FinQA는 LLM Judge로 추가 평가 권장",
+  "total_samples": 500,
+  "valid_samples": 500,
+  "error_count": 0,
+  "avg_latency_ms": 31652.74,
+  "p50_latency_ms": 34252.86,
+  "p95_latency_ms": 35775.04,
+  "max_latency_ms": 37019.17,
+  "total_cost_usd": 0.0,
+  "cost_per_item_usd": 0.0
+}

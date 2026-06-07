@@ -1,0 +1,17 @@
+{
+  "experiment_id": "F_financial_mmlu_ko",
+  "group": "F",
+  "dataset": "financial_mmlu_ko",
+  "model": "exaone-deep-7.8b",
+  "strategy": "qlora_rag",
+  "rag_active": true,
+  "total_records": 455,
+  "processed": 351,
+  "skipped_resumed": 104,
+  "errors": 0,
+  "total_cost_usd": 0.0,
+  "pricing_version": "2026-03-30-estimate",
+  "total_time_sec": 10976.54,
+  "avg_latency_ms": 31270.9,
+  "timestamp": "2026-06-07T14:06:23.601635"
+}

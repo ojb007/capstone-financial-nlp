@@ -1,0 +1,93 @@
+{
+  "accuracy": 0.2308,
+  "f1_macro": 0.3119,
+  "f1_micro": 0.3354,
+  "f1_weighted": 0.335,
+  "per_class": {
+    "4": {
+      "precision": 0.6364,
+      "recall": 0.2234,
+      "f1": 0.3307,
+      "support": 94
+    },
+    "1": {
+      "precision": 0.5,
+      "recall": 0.2676,
+      "f1": 0.3486,
+      "support": 71
+    },
+    "3": {
+      "precision": 0.7778,
+      "recall": 0.25,
+      "f1": 0.3784,
+      "support": 84
+    },
+    "2": {
+      "precision": 0.5938,
+      "recall": 0.2021,
+      "f1": 0.3016,
+      "support": 94
+    },
+    "5": {
+      "precision": 0.5,
+      "recall": 0.125,
+      "f1": 0.2,
+      "support": 8
+    }
+  },
+  "confusion_matrix": {
+    "1": {
+      "1": 19,
+      "2": 5,
+      "3": 1,
+      "4": 3,
+      "5": 1
+    },
+    "2": {
+      "1": 10,
+      "2": 19,
+      "3": 4,
+      "4": 6,
+      "5": 0
+    },
+    "3": {
+      "1": 4,
+      "2": 4,
+      "3": 21,
+      "4": 3,
+      "5": 0
+    },
+    "4": {
+      "1": 5,
+      "2": 4,
+      "3": 1,
+      "4": 21,
+      "5": 0
+    },
+    "5": {
+      "1": 0,
+      "2": 0,
+      "3": 0,
+      "4": 0,
+      "5": 1
+    }
+  },
+  "prediction_distribution": {
+    "1": 38,
+    "__unparseable__": 219,
+    "4": 33,
+    "5": 2,
+    "3": 27,
+    "2": 32
+  },
+  "unparseable_count": 219,
+  "total_samples": 351,
+  "valid_samples": 351,
+  "error_count": 0,
+  "avg_latency_ms": 31270.9,
+  "p50_latency_ms": 34671.75,
+  "p95_latency_ms": 36869.26,
+  "max_latency_ms": 38137.5,
+  "total_cost_usd": 0.0,
+  "cost_per_item_usd": 0.0
+}

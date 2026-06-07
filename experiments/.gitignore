@@ -1,9 +1,6 @@
 # API keys
 .env
 
-# Experiment outputs (large, regenerable)
-outputs/
-
 # Python cache
 __pycache__/
 *.pyc

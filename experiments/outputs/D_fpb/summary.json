@@ -1,0 +1,17 @@
+{
+  "experiment_id": "D_fpb",
+  "group": "D",
+  "dataset": "fpb",
+  "model": "exaone-4.0-32b",
+  "strategy": "zero_shot",
+  "rag_active": false,
+  "total_records": 4846,
+  "processed": 4843,
+  "skipped_resumed": 3,
+  "errors": 0,
+  "total_cost_usd": 0.0,
+  "pricing_version": "2026-03-30-estimate",
+  "total_time_sec": 1658.53,
+  "avg_latency_ms": 342.59,
+  "timestamp": "2026-05-21T11:51:29.883332"
+}

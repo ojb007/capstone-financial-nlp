@@ -1,0 +1,17 @@
+{
+  "experiment_id": "A_fpb",
+  "group": "A",
+  "dataset": "fpb",
+  "model": "gpt-5.4",
+  "strategy": "zero_shot",
+  "rag_active": false,
+  "total_records": 3,
+  "processed": 3,
+  "skipped_resumed": 0,
+  "errors": 0,
+  "total_cost_usd": 0.0014,
+  "pricing_version": "2026-03-30-estimate",
+  "total_time_sec": 9.48,
+  "avg_latency_ms": 3158.15,
+  "timestamp": "2026-04-30T15:14:30.662455"
+}

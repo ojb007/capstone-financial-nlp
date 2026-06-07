@@ -1,0 +1,17 @@
+{
+  "experiment_id": "E_financial_mmlu_ko",
+  "group": "E",
+  "dataset": "financial_mmlu_ko",
+  "model": "exaone-4.0-32b",
+  "strategy": "optimized_prompt_rag",
+  "rag_active": true,
+  "total_records": 455,
+  "processed": 351,
+  "skipped_resumed": 104,
+  "errors": 0,
+  "total_cost_usd": 0.0,
+  "pricing_version": "2026-03-30-estimate",
+  "total_time_sec": 344.93,
+  "avg_latency_ms": 538.99,
+  "timestamp": "2026-05-21T14:33:29.380665"
+}

@@ -1,0 +1,58 @@
+{
+  "accuracy": 0.6667,
+  "f1_macro": 0.5556,
+  "f1_micro": 0.6667,
+  "f1_weighted": 0.7778,
+  "per_class": {
+    "positive": {
+      "precision": 0.0,
+      "recall": 0,
+      "f1": 0,
+      "support": 0
+    },
+    "negative": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 1
+    },
+    "neutral": {
+      "precision": 1.0,
+      "recall": 0.5,
+      "f1": 0.6667,
+      "support": 2
+    }
+  },
+  "confusion_matrix": {
+    "positive": {
+      "positive": 0,
+      "negative": 0,
+      "neutral": 0
+    },
+    "negative": {
+      "positive": 0,
+      "negative": 1,
+      "neutral": 0
+    },
+    "neutral": {
+      "positive": 1,
+      "negative": 0,
+      "neutral": 1
+    }
+  },
+  "prediction_distribution": {
+    "neutral": 1,
+    "positive": 1,
+    "negative": 1
+  },
+  "unparseable_count": 0,
+  "total_samples": 3,
+  "valid_samples": 3,
+  "error_count": 0,
+  "avg_latency_ms": 3158.15,
+  "p50_latency_ms": 1643.45,
+  "p95_latency_ms": 6911.77,
+  "max_latency_ms": 6911.77,
+  "total_cost_usd": 0.0014,
+  "cost_per_item_usd": 0.000453
+}
